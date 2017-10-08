@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class AppstoreConfig(AppConfig):
+class AppStoreConfig(AppConfig):
     name = 'appStore'
