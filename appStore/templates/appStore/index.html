@@ -2,7 +2,7 @@
 	<h1>This is the list of available apps</h1>
 	<ul>
 		{% for app in all_apps %}
-		<li><a href="/appStore/{{ app.id }}">{{ app.name }}</a></li>
+		<li><a href="{% url 'detail' app.id %}">{{ app.name }}</a></li>
 		{% endfor %}
 	</ul>
 {% else %}
