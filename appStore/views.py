@@ -1,5 +1,4 @@
-from django.http import HttpResponse, Http404
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import App
 
 
@@ -8,11 +7,8 @@ def index(request):
 	return render(request, 'appStore/index.html' , context )
 
 def detail(request, app_id):
-	try:
-		app = App.objects.get(pk = app_id)
-		platform = app.platform_description()
-	except App.DoesNotExist:
-		raise Http404("App does not exist")
+	app = get_object_or_404(App, pk = app_id)
+	platform = app.platform_description()
 	return render(request, 'appStore/detail.html' , {'app': app, 'platform':platform} )
 
      
