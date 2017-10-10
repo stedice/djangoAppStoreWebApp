@@ -15,3 +15,9 @@ class App(models.Model):
 
 	def __str__(self):
 		return self.name + ', p: ' + self.platform + ', c: ' + str(self.created_at)
+
+	def platform_description(self):
+		for choice in self.PLATFORM_CHOICES:
+			if choice[0] == self.platform:
+				return choice[1]
+		return ''

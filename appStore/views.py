@@ -10,8 +10,9 @@ def index(request):
 def detail(request, app_id):
 	try:
 		app = App.objects.get(pk = app_id)
+		platform = app.platform_description()
 	except App.DoesNotExist:
 		raise Http404("App does not exist")
-	return render(request, 'appStore/detail.html' , {'app': app} )
+	return render(request, 'appStore/detail.html' , {'app': app, 'platform':platform} )
 
      
