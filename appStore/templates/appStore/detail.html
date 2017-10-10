@@ -1,4 +1,10 @@
-<h2>{{ app.name }}</h2>
-<p>{{ app.description }}<p> 
-<h5>App for {{ platform }} </h5>
-<i>Created on {{ app.created_at }} </i>
+{% extends 'appStore/base.html' %}
+{% block title %}App Details{% endblock %}
+
+{% block body %}
+	<h2>{{ app.name }}</h2>
+	<p>{{ app.description }}<p> 
+	<h5>App for {{ platform }} </h5>
+	<i>Created on {{ app.created_at }} </i>
+{% endblock %}
+
