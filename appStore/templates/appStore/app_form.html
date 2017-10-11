@@ -6,11 +6,13 @@
 <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
   {% csrf_token %}
   {% include 'appStore/form_template.html' %}
+  <div class="row">
   <div class="col-sm-offset-2 col-sm-10">
     <div class="form_group">
       <a class="btn btn-default" href="{% url 'appStore:index' %}" role="button">Cancel</a>
       <button type="submit" class="btn btn-success">Save</button>
     </div>
+  </div>
   </div>
 </form>
 {% endblock %}
