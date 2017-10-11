@@ -11,7 +11,7 @@
     <div class="media-body vline">
       <h1 class="media-heading">{{ app.name }}</h1>
       <p>{{ app.description }}</p>
-      <h5>App for {{ platform }} </h5>
+      <h5>App for {{ app.platform_description }} </h5>
       <h5><em>Created on {{ app.created_at }}</em></h5>
       <p>
         <a class="btn btn-default" href="{% url 'appStore:index' %}" role="button">Go Back</a>

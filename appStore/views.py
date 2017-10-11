@@ -1,17 +1,20 @@
-from django.shortcuts import render, get_object_or_404
-from django.views import generic
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import App
 
 
-def IndexView(request):
-	context = {'all_apps': App.objects.all()}
-	return render(request, 'appStore/index.html' , context )
+class IndexView(ListView):
+	template_name = 'appStore/index.html'
+	context_object_name = 'all_apps'
 
-def DetailView(request, app_id):
-	app = get_object_or_404(App, pk = app_id)
-	platform = app.platform_description()
-	return render(request, 'appStore/detail.html' , {'app': app, 'platform':platform} )
+	def get_queryset(self):
+		return App.objects.all()
+
+
+class DetailView(DetailView):
+	model= App
+	template_name = 'appStore/detail.html'
+
 
 class AppCreate(CreateView):
 	model = App
