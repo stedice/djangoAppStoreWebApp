@@ -7,9 +7,10 @@ from .models import App
 class IndexView(ListView):
 	template_name = 'appStore/index.html'
 	context_object_name = 'all_apps'
+	paginate_by = 10
 
 	def get_queryset(self):
-		return App.objects.all()
+		return App.objects.all().order_by('id')
 
 
 class DetailView(DetailView):

@@ -15,7 +15,7 @@ class App(models.Model):
 	created_at = models.DateTimeField(auto_now=False, auto_now_add=True)
 
 	def __str__(self):
-		return self.name + ', p: ' + self.platform + ', c: ' + str(self.created_at)
+		return self.name + '/' + self.platform 
 
 	def get_absolute_url(self):
 		return reverse ('appStore:detail', kwargs={'pk': self.pk})
