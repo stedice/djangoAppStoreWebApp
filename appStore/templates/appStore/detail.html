@@ -15,8 +15,8 @@
       <h5><em>Created on {{ app.created_at }}</em></h5>
       <p>
         <a class="btn btn-default" href="{% url 'appStore:index' %}" role="button">Go Back</a>
-        <a class="btn btn-info" href="#" role="button">Edit App</a>
-        <a class="btn btn-danger" href="#" role="button">Delete App</a>
+        <a class="btn btn-info" href="{% url 'appStore:app-update' app.id %}" role="button">Edit App</a>
+        <a class="btn btn-danger" href="{% url 'appStore:app-delete' app.id %}" role="button">Delete App</a>
       </p>
     </div>
   </div>

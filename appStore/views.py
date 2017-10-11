@@ -1,5 +1,6 @@
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.core.urlresolvers import reverse_lazy
 from .models import App
 
 
@@ -20,11 +21,16 @@ class AppCreate(CreateView):
 	model = App
 	fields = ['name','description','platform'] 
 
-# class AppUpdate(UpdateView):
-# 	model = App
-# 	fields = ['name','description','platform'] 
-# 	template_name_suffix = '_update_form'
 
-# class AppDelete(DeleteView):
-# 	model = App
-# 	success_url = reverse_lazy('app-list')
+class AppUpdate(UpdateView):
+	model = App
+	fields = ['name','description','platform'] 
+	#template_name_suffix = '_update_form'
+
+
+class AppDelete(DeleteView):
+	model = App
+
+	def get_success_url(self):
+		return reverse_lazy('appStore:index')
+		# success_url = reverse_lazy('appStore:index')

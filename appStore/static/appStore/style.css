@@ -2,6 +2,10 @@ body{
 	background: white url("images/paper.png");
 }
 
+.thumbnail {
+	padding-top: 20px;
+}
+
 .vline {
 	border-left: 1px solid;
 	padding-left: 20px;

@@ -1,0 +1,12 @@
+{% extends 'appStore/base.html' %} 
+{% block title %}Add/Edit App{% endblock %} 
+
+{% block body %}
+<h2>Delete App</h2>
+<form action="" method="post">
+	{% csrf_token %}
+    <p>Are you sure you want to delete the App "{{ object.name }}" for {{ object.platform_description }}?</p>
+    <a class="btn btn-default" href="{% url 'appStore:detail' app.id %}" role="button">Go Back</a>
+    <button type="submit" class="btn btn-danger">Confirm</a>
+</form>
+{% endblock %}
