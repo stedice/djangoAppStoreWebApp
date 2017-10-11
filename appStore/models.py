@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
 # Create your models here.
 class App(models.Model):
@@ -9,12 +10,15 @@ class App(models.Model):
         (ANDROID, 'Android')
     )
 	name = models.CharField(max_length=50)
-	description = models.CharField(max_length=200, null=True, blank=True)
+	description = models.TextField(max_length=200, null=True, blank=True)
 	platform = models.CharField(max_length=1, choices=PLATFORM_CHOICES, default=IOS)
 	created_at = models.DateTimeField(auto_now=False, auto_now_add=True)
 
 	def __str__(self):
 		return self.name + ', p: ' + self.platform + ', c: ' + str(self.created_at)
+
+	def get_absolute_url(self):
+		return reverse ('appStore:detail', kwargs={'pk': self.pk})
 
 	def platform_description(self):
 		for choice in self.PLATFORM_CHOICES:

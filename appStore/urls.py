@@ -6,8 +6,12 @@ app_name = 'appStore'
  
 urlpatterns = [
 	# /appStore
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.IndexView, name='index'),
 
     # /appStore/{id}/
-    url(r'^(?P<app_id>[0-9]+)/$', views.detail, name='detail')
+    url(r'^(?P<app_id>[0-9]+)/$', views.DetailView, name='detail'),
+
+    # /appStore/add/
+    url(r'^add/$', views.AppCreate.as_view(), name='app-add'),
+
 ]
