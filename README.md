@@ -27,6 +27,8 @@ The following pages/urls are available:
 
 Buttons and links are provided to navigate from one page to another and back.
 
+To make the app responsive I've integrated Bootstrap 3.3.7.
+
 ## Tests
 
 Some tests are available in the `tests` folder. To run them use the command
