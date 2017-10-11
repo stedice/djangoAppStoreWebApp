@@ -1,10 +1,20 @@
-{% extends 'appStore/base.html' %}
-{% block title %}App Details{% endblock %}
-
-{% block body %}
-	<h2>{{ app.name }}</h2>
-	<p>{{ app.description }}<p> 
-	<h5>App for {{ platform }} </h5>
-	<i>Created on {{ app.created_at }} </i>
+{% extends 'appStore/base.html' %} {% block title %}App Details{% endblock %} {% load staticfiles %} {% block body %}
+<div class="jumbotron">
+  <div class="media">
+    <div class="media-left media-middle">
+      <img class="media-object" alt="logo" src="{% static 'appStore/images/app_icon.png' %}">
+    </div>
+    <div class="media-body vline">
+      <h1 class="media-heading">{{ app.name }}</h1>
+      <p>{{ app.description }}</p>
+      <h5>App for {{ platform }} </h5>
+      <h5><em>Created on {{ app.created_at }}</em></h5>
+      <p>
+        <a class="btn btn-default" href="{% url 'appStore:index' %}" role="button">Go Back</a>
+        <a class="btn btn-info" href="#" role="button">Edit App</a>
+        <a class="btn btn-danger" href="#" role="button">Delete App</a>
+      </p>
+    </div>
+  </div>
+</div>
 {% endblock %}
-
