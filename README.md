@@ -20,14 +20,14 @@ The app uses _SQLite_ and provides only one model with the following fields: *(n
 The following pages/urls are available:
 
 * **appStore/** Show a list of all the available apps!
-[List Page](images/list.png)
+![List Page](images/list.png)
 * **appStore/{id}/** Detail page for the app with id={id}
-[Detail Page](images/detail.png)
+![Detail Page](images/detail.png)
 * **appstore/app/add/** Create a new app
 * **/appStore/app/{id}/** Edit detail page for the app with id={id}
-[Create/Edit Page](images/edit.png)
+![Create/Edit Page](images/edit.png)
 * **/appStore/app/{id}/delete** Delete confirmation page for the app with id={id}
-[Delete Page](images/delete.png)
+![Delete Page](images/delete.png)
 
 
 Buttons and links are provided to navigate from one page to another and back.
